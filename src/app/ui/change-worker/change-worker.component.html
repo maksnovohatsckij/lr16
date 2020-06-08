@@ -1,0 +1,49 @@
+<div ngbDropdown #myDrop="ngbDropdown" class="d-block">
+    <button class="btn btn-block btn-outline-primary btn-sm" id="dropdownForm1" ngbDropdownToggle>
+        Изменить
+    </button>
+    <div class="my-2" ngbDropdownMenu aria-labelledby="dropdownForm1">
+        <form [formGroup]="form" (ngSubmit)="onChangeWorker()" class="px-4 py-3" style="width: max-content;">
+
+            <div class="form-group">
+                <input formControlName="name" type="text" class="form-control" placeholder="Имя" />
+                <div class="error" [hidden]="!(form.get('name').touched && form.get('name').invalid)">
+                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input formControlName="surname" type="text" class="form-control" placeholder="Фамилия" />
+                <div class="error" [hidden]="!(form.get('surname').touched && form.get('surname').invalid)">
+                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input [textMask]="{mask: mask}" formControlName="number" type="text" class="form-control"
+                    placeholder="Номер" />
+                <div class="error" [hidden]="!(form.get('number').touched && form.get('number').invalid)">
+                    <span class="badge badge-pill badge-danger">Поле пустое или заполнено неверно</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <select formControlName="type" class="custom-select">
+                    <option [ngValue]="myWorkerType.programmer">Программист</option>
+                    <option [ngValue]="myWorkerType.designer">Дизайнер</option>
+                    <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
+                    <option [ngValue]="myWorkerType.manager">Менеджер</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit"
+                    [ngClass]="{'btn-outline-primary': form.valid, 'btn-outline-danger': !(form.valid)}"
+                    class="btn btn-block btn-sm" (click)="myDrop.close()" [disabled]="!form.valid">
+                    Изменить
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
