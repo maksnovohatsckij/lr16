@@ -24,7 +24,7 @@ export class PersonalComponent implements OnInit {
   }
 
   getByType(type: number) {
-    return this.workers.filter((worker) => worker.type === type);
+    return this.workers.filter((worker) => worker.department === type);
   }
 
   async getDatabase() {

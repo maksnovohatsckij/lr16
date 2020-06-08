@@ -20,6 +20,27 @@
             </div>
 
             <div class="form-group">
+                <input formControlName="patr" type="text" class="form-control" placeholder="Отчество" />
+                <div class="error" [hidden]="!(form.get('patr').touched && form.get('patr').invalid)">
+                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input formControlName="birthday" type="date" class="form-control" placeholder="Дата рожд." />
+                <div class="error" [hidden]="!(form.get('birthday').touched && form.get('birthday').invalid)">
+                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input formControlName="email" type="email" class="form-control" placeholder="email" />
+                <div class="error" [hidden]="!(form.get('email').touched && form.get('email').invalid)">
+                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <input [textMask]="{mask: mask}" formControlName="number" type="text" class="form-control"
                     placeholder="Номер" />
                 <div class="error" [hidden]="!(form.get('number').touched && form.get('number').invalid)">
@@ -28,11 +49,11 @@
             </div>
 
             <div class="form-group">
-                <select formControlName="type" class="custom-select">
-                    <option [ngValue]="myWorkerType.programmer">Программист</option>
-                    <option [ngValue]="myWorkerType.designer">Дизайнер</option>
-                    <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
-                    <option [ngValue]="myWorkerType.manager">Менеджер</option>
+                <select formControlName="department" class="custom-select">
+                    <option [ngValue]="myWorkerType.it">IT отдел</option>
+                    <option [ngValue]="myWorkerType.sales">Отдел продаж</option>
+                    <option [ngValue]="myWorkerType.delivery">Отдел доставки</option>
+                    <option [ngValue]="myWorkerType.legal">Юридический отдел</option>
                 </select>
             </div>
 

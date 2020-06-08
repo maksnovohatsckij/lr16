@@ -4,36 +4,51 @@
       "id": 1,
       "name": "Иван",
       "surname": "Иванов",
-      "type": 0,
-      "number": "+7(800) 555-3535"
+      "patr": "Иваныч",
+      "department": 0,
+      "number": "+7(800) 555-3535",
+      "email": "worker@mail.ru",
+      "birthday": "1995-05-05"
     },
     {
       "id": 2,
       "name": "Петр",
       "surname": "Петров",
-      "type": 1,
-      "number": "+7(800) 555-3535"
+      "patr": "Абрамович",
+      "department": 1,
+      "number": "+7(800) 555-3535",
+      "email": "worker@mail.ru",
+      "birthday": "1995-05-05"
     },
     {
       "id": 3,
       "name": "Сидор",
       "surname": "Сидоров",
-      "type": 2,
-      "number": "+7(800) 555-3535"
-    },
-    {
-      "id": 4,
-      "name": "Василий",
-      "surname": "Васильев",
-      "type": 3,
-      "number": "+7(800) 555-3535"
+      "patr": "Абрамович",
+      "department": 2,
+      "number": "+7(800) 555-3535",
+      "email": "worker@mail.ru",
+      "birthday": "1995-05-05"
     },
     {
       "name": "Вася",
       "surname": "Пупкин",
-      "type": 0,
+      "patr": "Петрович",
+      "department": 0,
       "number": "+7(999) 999-7733",
-      "id": 5
+      "id": 5,
+      "email": "worker@mail.ru",
+      "birthday": "1995-05-05"
+    },
+    {
+      "name": "Джек",
+      "surname": "Воробей",
+      "patr": "Игнатьевич",
+      "birthday": "2000-06-20",
+      "email": "jack@mail.ru",
+      "number": "+7(123) 456-7890",
+      "department": 3,
+      "id": 6
     }
   ]
 }

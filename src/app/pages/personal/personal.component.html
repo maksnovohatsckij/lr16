@@ -11,13 +11,13 @@
         <h2>Поиск</h2>
         <input type="text" class="form-control" placeholder="Начните вводить имя или фамилию" [(ngModel)]="search" />
     </div>
-    <app-table-workers [title]="'Программисты'" [workers]="getByType(myWorkerType.programmer) | search: search"
+    <app-table-workers [title]="'IT отдел'" [workers]="getByType(myWorkerType.it) | search: search"
         (changeWorker)="onChangeWorker($event)" (deleteWorker)="onDeleteWorker($event)"></app-table-workers>
-    <app-table-workers [title]="'Дизайнеры'" [workers]="getByType(myWorkerType.designer) | search: search"
+    <app-table-workers [title]="'Отдел продаж'" [workers]="getByType(myWorkerType.sales) | search: search"
         (changeWorker)="onChangeWorker($event)" (deleteWorker)="onDeleteWorker($event)"></app-table-workers>
-    <app-table-workers [title]="'Рекламщики'" [workers]="getByType(myWorkerType.copywriter) | search: search"
+    <app-table-workers [title]="'Отдел доставки'" [workers]="getByType(myWorkerType.delivery) | search: search"
         (changeWorker)="onChangeWorker($event)" (deleteWorker)="onDeleteWorker($event)"></app-table-workers>
-    <app-table-workers [title]="'Менеджеры'" [workers]="getByType(myWorkerType.manager) | search: search"
+    <app-table-workers [title]="'Юридический отдел'" [workers]="getByType(myWorkerType.legal) | search: search"
         (changeWorker)="onChangeWorker($event)" (deleteWorker)="onDeleteWorker($event)"></app-table-workers>
     <div [hidden]="(workers | search: search).length > 0" class="my-1 py-3 px-5 container">
         <mat-spinner></mat-spinner>

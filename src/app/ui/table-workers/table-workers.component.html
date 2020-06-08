@@ -5,9 +5,12 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col" [style.width]="'100px'">#</th>
-            <th scope="col" [style.width]="'25%'">Имя</th>
-            <th scope="col" [style.width]="'25%'">Фамилия</th>
+            <th scope="col" [style.width]="'5%'">#</th>
+            <th scope="col" [style.width]="'10%'">Имя</th>
+            <th scope="col" [style.width]="'10%'">Фамилия</th>
+            <th scope="col" >Отчество</th>
+            <th scope="col">Дата рожд.</th>
+            <th scope="col">Почта</th>
             <th scope="col">Номер</th>
             <th scope="col" [style.width]="'200px'"></th>
           </tr>
@@ -17,6 +20,9 @@
             <th class="align-middle" scope="row">{{ worker.id }}</th>
             <td class="align-middle">{{ worker.name }}</td>
             <td class="align-middle">{{ worker.surname }}</td>
+            <td class="align-middle">{{ worker.patr }}</td>
+            <td class="align-middle">{{ worker.birthday }}</td>
+            <td class="align-middle">{{ worker.email }}</td>
             <td class="align-middle">{{ worker.number }}</td>
             <td class="align-middle">
               <div class="row pr-1">

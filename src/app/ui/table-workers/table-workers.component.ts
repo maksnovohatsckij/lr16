@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MyWorkerType, MyWorker } from 'src/app/shared/worker.model';
+import { MyWorker } from 'src/app/shared/worker.model';
 
 @Component({
   selector: 'app-table-workers',

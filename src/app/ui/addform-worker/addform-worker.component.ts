@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MyWorkerType, MyWorker } from 'src/app/shared/worker.model';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { buildForm, masks, dataFrom } from 'src/app/shared/form.model';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addform-worker',
@@ -11,27 +12,17 @@ export class AddformWorkerComponent implements OnInit {
   myWorkerType = MyWorkerType;
   used: boolean = false;
   form: FormGroup;
-  public mask = ['+', '7', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  mask = masks.phone;
   @Output() addWorker = new EventEmitter<MyWorker>();
 
   constructor() {
-    this.form = new FormGroup({ // создание новой формы
-      name: new FormControl(null, [Validators.required]), // поля формы
-      surname: new FormControl(null, [Validators.required]),
-      type: new FormControl(null, [Validators.required]),
-      number: new FormControl(null, [Validators.pattern(/^[+,0-9,(,), ,-]+$/), Validators.required])
-    });
+    this.form = buildForm();
   }
 
   ngOnInit(): void { }
 
   onAddWorker() {
-    this.addWorker.emit({
-      name: this.form.value.name,
-      surname: this.form.value.surname,
-      type: this.form.value.type,
-      number: this.form.value.number
-    });
+    this.addWorker.emit(dataFrom(this.form.value));
     this.form.reset();
   }
 }
