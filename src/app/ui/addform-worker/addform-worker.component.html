@@ -1,56 +1,56 @@
 <form [formGroup]="form" (ngSubmit)="onAddWorker()" class="row mb-3">
 
-    <div class="col-12">
-      <h5>Добавить сотрудника</h5>
+  <div class="col-12">
+    <h5>Добавить сотрудника</h5>
+  </div>
+
+  <div class="col-3">
+    <input formControlName="name" type="text" class="form-control" placeholder="Имя" />
+    <div class="error" style="height: 1.5em;">
+      <span [hidden]="!(form.get('name').touched && form.get('name').invalid)" style="height: 1.5em;"
+        class="badge badge-pill badge-danger">
+        Поле не может быть пустым
+      </span>
     </div>
-  
-    <div class="col-3">
-      <input formControlName="name" type="text" class="form-control" placeholder="Имя" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('name').touched && form.get('name').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле не может быть пустым
-        </span>
-      </div>
+  </div>
+
+  <div class="col-3">
+    <input formControlName="surname" type="text" class="form-control" placeholder="Фамилия" />
+    <div class="error" style="height: 1.5em;">
+      <span [hidden]="!(form.get('surname').touched && form.get('surname').invalid)" style="height: 1.5em;"
+        class="badge badge-pill badge-danger">
+        Поле не может быть пустым
+      </span>
     </div>
-  
-    <div class="col-3">
-      <input formControlName="surname" type="text" class="form-control" placeholder="Фамилия" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('surname').touched && form.get('surname').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле не может быть пустым
-        </span>
-      </div>
+  </div>
+
+  <div class="col-3">
+    <input [textMask]="{mask: mask}" formControlName="number" type="text" class="form-control" placeholder="Номер" />
+    <div class="error" style="height: 1.5em;">
+      <span [hidden]="!(form.get('number').touched && form.get('number').invalid)" style="height: 1.5em;"
+        class="badge badge-pill badge-danger">
+        Поле пустое или заполнено неверно
+      </span>
     </div>
-  
-    <div class="col-3">
-      <input [textMask]="{mask: mask}" formControlName="number" type="text" class="form-control" placeholder="Номер" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('number').touched && form.get('number').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле пустое или заполнено неверно
-        </span>
-      </div>
+  </div>
+
+  <div class="col-3">
+    <select formControlName="type" class="custom-select">
+      <option [ngValue]="myWorkerType.programmer">Программист</option>
+      <option [ngValue]="myWorkerType.designer">Дизайнер</option>
+      <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
+      <option [ngValue]="myWorkerType.manager">Менеджер</option>
+    </select>
+    <div class="error"
+      [hidden]="!(form.get('name').touched && form.get('surname').touched && form.get('number').touched && form.get('type').invalid)">
+      <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
     </div>
-  
-    <div class="col-3">
-      <select formControlName="type" class="custom-select">
-        <option [ngValue]="myWorkerType.programmer">Программист</option>
-        <option [ngValue]="myWorkerType.designer">Дизайнер</option>
-        <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
-        <option [ngValue]="myWorkerType.manager">Менеджер</option>
-      </select>
-      <div class="error"
-        [hidden]="!(form.get('name').touched && form.get('surname').touched && form.get('number').touched && form.get('type').invalid)">
-        <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
-      </div>
-    </div>
-  
-    <div class="col-12 mt-1">
-      <button type="submit" class="btn btn-outline-primary btn-sm" [disabled]="!form.valid">
-        Добавить
-      </button>
-    </div>
-  
-  </form>
+  </div>
+
+  <div class="col-12 mt-1">
+    <button type="submit" class="btn btn-outline-primary btn-sm" [disabled]="!form.valid">
+      Добавить
+    </button>
+  </div>
+
+</form>

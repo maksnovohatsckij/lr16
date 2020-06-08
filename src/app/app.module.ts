@@ -16,6 +16,7 @@ import { ChangeWorkerComponent } from './ui/change-worker/change-worker.componen
 import { TableWorkersComponent } from './ui/table-workers/table-workers.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SearchPipe,
     AddformWorkerComponent,
     ChangeWorkerComponent,
-    TableWorkersComponent
+    TableWorkersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
