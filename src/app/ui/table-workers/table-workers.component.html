@@ -5,18 +5,32 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col" [style.width]="'5%'">#</th>
-            <th scope="col" [style.width]="'10%'">Имя</th>
-            <th scope="col" [style.width]="'10%'">Фамилия</th>
-            <th scope="col" >Отчество</th>
-            <th scope="col">Дата рожд.</th>
-            <th scope="col">Почта</th>
-            <th scope="col">Номер</th>
+            <th class="px-0 py-1" scope="col" [style.width]="'5%'">
+              <button class="btn" (click)="sort(attr.id)">#</button>
+            </th>
+            <th class="px-0 py-1" scope="col" [style.width]="'10%'">
+              <button class="btn" (click)="sort(attr.name)">Имя</button>
+            </th>
+            <th class="px-0 py-1" scope="col" [style.width]="'10%'">
+              <button class="btn" (click)="sort(attr.surname)">Фамилия</button>
+            </th>
+            <th class="px-0 py-1" scope="col">
+              <button class="btn" (click)="sort(attr.patr)">Отчество</button>
+            </th>
+            <th class="px-0 py-1" scope="col">
+              <button class="btn" (click)="sort(attr.birthday)">Дата рожд.</button>
+            </th>
+            <th class="px-0 py-1" scope="col">
+              <button class="btn" (click)="sort(attr.email)">Почта</button>
+            </th>
+            <th class="px-0 py-1" scope="col">
+              <button class="btn" (click)="sort(attr.number)">Номер</button>
+            </th>
             <th scope="col" [style.width]="'200px'"></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let worker of workers">
+          <tr *ngFor="let worker of workersSorted">
             <th class="align-middle" scope="row">{{ worker.id }}</th>
             <td class="align-middle">{{ worker.name }}</td>
             <td class="align-middle">{{ worker.surname }}</td>

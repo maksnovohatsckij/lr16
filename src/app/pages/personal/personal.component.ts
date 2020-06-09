@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {
   MyWorker,
   MyWorkerType,
-} from '../../shared/worker.model';
-import { DataService } from '../../services/data.service';
+} from 'src/app/shared/worker.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-personal',

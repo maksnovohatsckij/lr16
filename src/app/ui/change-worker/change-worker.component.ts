@@ -26,14 +26,9 @@ export class ChangeWorkerComponent implements OnInit {
   }
 
   onChangeWorker() {
-    this.worker.name = this.form.value.name;
-    this.worker.surname = this.form.value.surname;
-    this.worker.patr = this.form.value.patr;
-    this.worker.birthday = this.form.value.birthday;
-    this.worker.email = this.form.value.email;
-    this.worker.number = this.form.value.number;
-    this.worker.department = this.form.value.department;
-
+    let workerData = dataFrom(this.form.value);
+    workerData["id"] = this.worker.id;
+    this.worker = workerData;
     this.changeWorker.emit(this.worker);
   }
 

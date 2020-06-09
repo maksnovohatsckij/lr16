@@ -1,14 +1,14 @@
 {
   "workers": [
     {
-      "id": 1,
       "name": "Иван",
       "surname": "Иванов",
       "patr": "Иваныч",
-      "department": 0,
-      "number": "+7(800) 555-3535",
+      "birthday": "1995-05-05",
       "email": "worker@mail.ru",
-      "birthday": "1995-05-05"
+      "number": "+7(800) 555-3535",
+      "department": 0,
+      "id": 1
     },
     {
       "id": 2,
@@ -49,6 +49,26 @@
       "number": "+7(123) 456-7890",
       "department": 3,
       "id": 6
+    },
+    {
+      "name": "Александр",
+      "surname": "Пушкин",
+      "patr": "Сергеевич",
+      "birthday": "2020-01-01",
+      "email": "p@ya.ru",
+      "number": "+7(987) 654-3412",
+      "department": 0,
+      "id": 7
+    },
+    {
+      "name": "Владимир",
+      "surname": "Путин",
+      "patr": "Владимирович",
+      "birthday": "2222-03-21",
+      "email": "13132@fds",
+      "number": "+7(311) 323-1133",
+      "department": 0,
+      "id": 8
     }
   ]
 }

@@ -5,6 +5,7 @@ import { MyWorker } from '../shared/worker.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
   url = "http://localhost:3000/workers";
 
