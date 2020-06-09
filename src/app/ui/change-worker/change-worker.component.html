@@ -6,50 +6,39 @@
         <form [formGroup]="form" (ngSubmit)="onChangeWorker()" class="px-4 py-3" style="width: max-content;">
 
             <div class="form-group">
-                <input formControlName="name" type="text" class="form-control" placeholder="Имя" />
-                <div class="error" [hidden]="!(form.get('name').touched && form.get('name').invalid)">
-                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
-                </div>
+                <input formControlName="name" type="text" class="form-control" placeholder="Имя"
+                    [ngClass]="{'is-invalid': form.get('name').touched && form.get('name').invalid}" />
             </div>
 
             <div class="form-group">
-                <input formControlName="surname" type="text" class="form-control" placeholder="Фамилия" />
-                <div class="error" [hidden]="!(form.get('surname').touched && form.get('surname').invalid)">
-                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
-                </div>
+                <input formControlName="surname" type="text" class="form-control" placeholder="Фамилия"
+                    [ngClass]="{'is-invalid': form.get('surname').touched && form.get('surname').invalid}" />
             </div>
 
             <div class="form-group">
-                <input formControlName="patr" type="text" class="form-control" placeholder="Отчество" />
-                <div class="error" [hidden]="!(form.get('patr').touched && form.get('patr').invalid)">
-                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
-                </div>
+                <input formControlName="patr" type="text" class="form-control" placeholder="Отчество"
+                    [ngClass]="{'is-invalid': form.get('patr').touched && form.get('patr').invalid}" />
             </div>
 
             <div class="form-group">
-                <input formControlName="birthday" type="date" class="form-control" placeholder="Дата рожд." />
-                <div class="error" [hidden]="!(form.get('birthday').touched && form.get('birthday').invalid)">
-                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
-                </div>
+                <input formControlName="birthday" type="date" class="form-control" placeholder="Дата рожд."
+                    [ngClass]="{'is-invalid': form.get('birthday').touched && form.get('birthday').invalid}" />
             </div>
 
             <div class="form-group">
-                <input formControlName="email" type="email" class="form-control" placeholder="email" />
-                <div class="error" [hidden]="!(form.get('email').touched && form.get('email').invalid)">
-                    <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
-                </div>
+                <input formControlName="email" type="email" class="form-control" placeholder="email"
+                    [ngClass]="{'is-invalid': form.get('email').touched && form.get('email').invalid}" />
             </div>
 
             <div class="form-group">
                 <input [textMask]="{mask: mask}" formControlName="number" type="text" class="form-control"
-                    placeholder="Номер" />
-                <div class="error" [hidden]="!(form.get('number').touched && form.get('number').invalid)">
-                    <span class="badge badge-pill badge-danger">Поле пустое или заполнено неверно</span>
-                </div>
+                    placeholder="Номер"
+                    [ngClass]="{'is-invalid': form.get('number').touched && form.get('number').invalid}" />
             </div>
 
             <div class="form-group">
-                <select formControlName="department" class="custom-select">
+                <select formControlName="department" class="custom-select"
+                    [ngClass]="{'is-invalid': form.get('department').touched && form.get('department').invalid}">
                     <option [ngValue]="myWorkerType.it">IT отдел</option>
                     <option [ngValue]="myWorkerType.sales">Отдел продаж</option>
                     <option [ngValue]="myWorkerType.delivery">Отдел доставки</option>

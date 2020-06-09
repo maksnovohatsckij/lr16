@@ -6,76 +6,44 @@
 
   <div class="row">
 
-    <div class="col-3">
-      <input formControlName="name" type="text" class="form-control" placeholder="Имя" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('name').touched && form.get('name').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле не может быть пустым
-        </span>
-      </div>
+    <div class="col-sm-3 mb-3">
+      <input formControlName="name" type="text" class="form-control" placeholder="Имя"
+        [ngClass]="{'is-invalid': form.get('name').touched && form.get('name').invalid}" />
     </div>
 
-    <div class="col-3">
-      <input formControlName="surname" type="text" class="form-control" placeholder="Фамилия" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('surname').touched && form.get('surname').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле не может быть пустым
-        </span>
-      </div>
+    <div class="col-sm-3 mb-3">
+      <input formControlName="surname" type="text" class="form-control" placeholder="Фамилия"
+        [ngClass]="{'is-invalid': form.get('surname').touched && form.get('surname').invalid}" />
     </div>
 
-    <div class="col-3">
-      <input formControlName="patr" type="text" class="form-control" placeholder="Отчество" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('surname').touched && form.get('patr').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле не может быть пустым
-        </span>
-      </div>
+    <div class="col-sm-3 mb-3">
+      <input formControlName="patr" type="text" class="form-control" placeholder="Отчество"
+        [ngClass]="{'is-invalid': form.get('patr').touched && form.get('patr').invalid}" />
     </div>
 
-    <div class="col-3">
-      <input formControlName="birthday" type="date" class="form-control" placeholder="Дата рожд." />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('birthday').touched && form.get('birthday').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле не может быть пустым
-        </span>
-      </div>
+    <div class="col-sm-3 mb-3">
+      <input formControlName="birthday" type="date" class="form-control" placeholder="Дата рожд."
+        [ngClass]="{'is-invalid': form.get('birthday').touched && form.get('birthday').invalid}" />
     </div>
 
-    <div class="col-4">
-      <input formControlName="email" type="email" class="form-control" placeholder="email" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('email').touched && form.get('email').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле не может быть пустым
-        </span>
-      </div>
+    <div class="col-sm-4 mb-3">
+      <input formControlName="email" type="email" class="form-control" placeholder="email"
+        [ngClass]="{'is-invalid': form.get('email').touched && form.get('email').invalid}" />
     </div>
 
-    <div class="col-4">
-      <input [textMask]="{mask: mask}" formControlName="number" type="text" class="form-control" placeholder="Номер" />
-      <div class="error" style="height: 1.5em;">
-        <span [hidden]="!(form.get('number').touched && form.get('number').invalid)" style="height: 1.5em;"
-          class="badge badge-pill badge-danger">
-          Поле пустое или заполнено неверно
-        </span>
-      </div>
+    <div class="col-sm-4 mb-3">
+      <input [textMask]="{mask: mask}" formControlName="number" type="text" class="form-control" placeholder="Номер"
+        [ngClass]="{'is-invalid': form.get('number').touched && form.get('number').invalid}" />
     </div>
 
-    <div class="col-4">
-      <select formControlName="department" class="custom-select">
+    <div class="col-sm-4 mb-3">
+      <select formControlName="department" class="custom-select"
+        [ngClass]="{'is-invalid': form.get('department').touched && form.get('department').invalid}">
         <option [ngValue]="myWorkerType.it">IT отдел</option>
         <option [ngValue]="myWorkerType.sales">Отдел продаж</option>
         <option [ngValue]="myWorkerType.delivery">Отдел доставки</option>
         <option [ngValue]="myWorkerType.legal">Юридический отдел</option>
       </select>
-      <div class="error" [hidden]="!(form.get('department').touched && form.get('department').invalid)">
-        <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
-      </div>
     </div>
 
   </div>

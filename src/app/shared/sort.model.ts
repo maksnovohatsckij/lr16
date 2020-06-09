@@ -12,17 +12,23 @@ export enum attr {
 }
 
 export class Sorter {
-    sortInversionBool: boolean[] = [];
-    sortArrayWorkers(workers: MyWorker[], param: attr, donttoggle?: boolean): MyWorker[] {
-        if (this.sortInversionBool[param] === undefined) this.sortInversionBool[param] = Boolean(donttoggle);
-        if (!donttoggle) this.sortInversionBool[param] = !this.sortInversionBool[param];
+    lastParam: attr;
+    sortInversion: boolean = false;
 
-        workers.sort((w1, w2) => {
-            let a = w1[param];
-            let b = w2[param];
-            if (!this.sortInversionBool[param]) { [a, b] = [b, a] };
+    sortArrayWorkers(workers: MyWorker[], param: attr, donttoggle?: boolean): MyWorker[] {
+        if (this.lastParam == param) {
+            if (!donttoggle) this.sortInversion = !this.sortInversion;
+        } else {
+            this.sortInversion = false;
+            this.lastParam = param;
+        }
+
+        workers.sort((w1: MyWorker, w2: MyWorker) => {
+            let [a, b] = [w1[param], w2[param]];
+            if (this.sortInversion) { [a, b] = [b, a] };
             return a > b ? 1 : a < b ? -1 : 0;
         });
+
         return workers;
     }
 }
