@@ -6,25 +6,25 @@
         <thead>
           <tr>
             <th class="px-0 py-1" scope="col" [style.width]="'5%'">
-              <button class="btn" (click)="sort(attr.id)">#</button>
+              <button class="btn btn-block btn-light text-left" (click)="sort(attr.id)">#</button>
             </th>
-            <th class="px-0 py-1" scope="col" [style.width]="'10%'">
-              <button class="btn" (click)="sort(attr.name)">Имя</button>
+            <th class="px-0 py-1" scope="col" [style.width]="'13%'">
+              <button class="btn btn-block btn-light text-left" (click)="sort(attr.name)">Имя</button>
             </th>
-            <th class="px-0 py-1" scope="col" [style.width]="'10%'">
-              <button class="btn" (click)="sort(attr.surname)">Фамилия</button>
-            </th>
-            <th class="px-0 py-1" scope="col">
-              <button class="btn" (click)="sort(attr.patr)">Отчество</button>
+            <th class="px-0 py-1" scope="col" [style.width]="'13%'">
+              <button class="btn btn-block btn-light text-left" (click)="sort(attr.surname)">Фамилия</button>
             </th>
             <th class="px-0 py-1" scope="col">
-              <button class="btn" (click)="sort(attr.birthday)">Г.р.</button>
+              <button class="btn btn-block btn-light text-left" (click)="sort(attr.patr)">Отчество</button>
             </th>
             <th class="px-0 py-1" scope="col">
-              <button class="btn" (click)="sort(attr.email)">Почта</button>
+              <button class="btn btn-block btn-light text-left" (click)="sort(attr.birthday)">Г.р.</button>
             </th>
             <th class="px-0 py-1" scope="col">
-              <button class="btn" (click)="sort(attr.number)">Номер</button>
+              <button class="btn btn-block btn-light text-left" (click)="sort(attr.email)">Почта</button>
+            </th>
+            <th class="px-0 py-1" scope="col">
+              <button class="btn btn-block btn-light text-left" (click)="sort(attr.number)">Номер</button>
             </th>
             <th scope="col" [style.width]="'200px'"></th>
           </tr>
@@ -35,7 +35,7 @@
             <td class="align-middle">{{ worker.name }}</td>
             <td class="align-middle">{{ worker.surname }}</td>
             <td class="align-middle">{{ worker.patr }}</td>
-            <td class="align-middle">{{ worker.birthday }}</td>
+            <td class="align-middle">{{ worker.birthday | date }}</td>
             <td class="align-middle">{{ worker.email }}</td>
             <td class="align-middle">{{ worker.number }}</td>
             <td class="align-middle">
